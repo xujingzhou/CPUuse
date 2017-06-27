@@ -9,7 +9,5 @@
    
    regsvr32 组件名(如: c:\\CPUuse.dll)
    
-   
-   徐景周(Johnny Xu)
 
 
