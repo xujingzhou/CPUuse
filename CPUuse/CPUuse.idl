@@ -1,0 +1,41 @@
+// CPUuse.idl : IDL source for CPUuse.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CPUuse.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(F6F0ADA0-32FA-11D7-AA35-EA02DB2FF40A),
+		dual,
+		helpstring("ICpuUsage Interface"),
+		pointer_default(unique)
+	]
+	interface ICpuUsage : IDispatch
+	{
+		[id(1), helpstring("method IsShellSystemType")] HRESULT IsShellSystemType([out,retval]BSTR* pbstrSysType);
+		[id(2), helpstring("method CpuUsage9x")] HRESULT CpuUsage9x([out,retval]long *plResult);
+		[id(3), helpstring("method CpuUsage2000")] HRESULT CpuUsage2000([out,retval]long* plResult);
+	};
+
+[
+	uuid(4A11C6A0-32B4-11D7-AA35-BA655511EE0A),
+	version(1.0),
+	helpstring("CPUuse 1.0 Type Library")
+]
+library CPUUSELib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(F6F0ADA1-32FA-11D7-AA35-EA02DB2FF40A),
+		helpstring("CpuUsage Class")
+	]
+	coclass CpuUsage
+	{
+		[default] interface ICpuUsage;
+	};
+};

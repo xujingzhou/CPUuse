@@ -1,0 +1,26 @@
+HKCR
+{
+	CPUuse.CpuUsage.1 = s 'CpuUsage Class'
+	{
+		CLSID = s '{F6F0ADA1-32FA-11D7-AA35-EA02DB2FF40A}'
+	}
+	CPUuse.CpuUsage = s 'CpuUsage Class'
+	{
+		CLSID = s '{F6F0ADA1-32FA-11D7-AA35-EA02DB2FF40A}'
+		CurVer = s 'CPUuse.CpuUsage.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F6F0ADA1-32FA-11D7-AA35-EA02DB2FF40A} = s 'CpuUsage Class'
+		{
+			ProgID = s 'CPUuse.CpuUsage.1'
+			VersionIndependentProgID = s 'CPUuse.CpuUsage'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{4A11C6A0-32B4-11D7-AA35-BA655511EE0A}'
+		}
+	}
+}
